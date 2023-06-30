@@ -1,0 +1,11 @@
+.cart {
+  margin-top: 48px;
+  background: #ffe0b3;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+}
+
+.cart h3 {
+  text-align: center;
+}
