@@ -18,15 +18,16 @@ const Cart = ({ cart, price }) => {
   // * aita diye all cart er output dkha jay
   console.log(cart);
   //? grandTotal
-  const grandTotal = total + totalShiping + tax;
+  const grandTotal = (total + totalShiping + tax).toFixed(2);
   return (
     <div className="cart">
       <h3>Order Sumary</h3>
       <h4>Selected Items: {cart.length}</h4>
       <h4>Total Price: ${total}</h4>
       <h4>Shipping:$ {totalShiping}</h4>
-      <h4>Tax: ${tax}</h4>
+      <h4>Tax: ${tax.toFixed(2)}</h4>
       <h2>Grand Total: ${grandTotal}</h2>
+      <button>Clear Cart</button>
     </div>
   );
 };
