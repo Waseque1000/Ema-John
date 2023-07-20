@@ -8,9 +8,14 @@ const Cart = ({ cart, price }) => {
   //!  price ta ber  korer jonno for of use korte hbe
   let total = 0;
   let totalShiping = 0;
+  let quantity = 0;
   for (const product of cart) {
-    total = product.price + total;
+    if (product.quantity === 0) {
+      product.quantity = 1;
+    }
+    total = total + product.price * product.quantity;
     totalShiping = totalShiping + product.shipping;
+    quantity = quantity + product.quantity;
   }
 
   //! tax
@@ -22,7 +27,7 @@ const Cart = ({ cart, price }) => {
   return (
     <div className="cart">
       <h3>Order Sumary</h3>
-      <h4>Selected Items: {cart.length}</h4>
+      <h4>Selected Items: {quantity}</h4>
       <h4>Total Price: ${total}</h4>
       <h4>Shipping:$ {totalShiping}</h4>
       <h4>Tax: ${tax.toFixed(2)}</h4>
