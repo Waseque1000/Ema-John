@@ -2,14 +2,20 @@ import React, { useEffect, useState } from "react";
 import "./Shop.css";
 import Product from "../Product/Product";
 import Cart from "../cart/Cart";
-import { addToDb, getShoppingCart } from "../../utilities/fakedb";
+import {
+  addToDb,
+  deleteShoppingCart,
+  getShoppingCart,
+} from "../../utilities/fakedb";
+import { Link } from "react-router-dom";
 
 const Shop = () => {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
   useEffect(() => {
     fetch(
-      "https://raw.githubusercontent.com/ProgrammingHero1/ema-john-resources/main/fakeData/products.json"
+      // "https://raw.githubusercontent.com/ProgrammingHero1/ema-john-resources/main/fakeData/products.json"
+      "products.json"
     )
       .then((res) => res.json())
       .then((data) => setProducts(data));
@@ -69,6 +75,12 @@ const Shop = () => {
     // ? localStorage
     addToDb(product.id);
   };
+  // ! function ==> this function use to clear all data from database
+
+  const handelClearDb = () => {
+    setCart([]);
+    deleteShoppingCart();
+  };
 
   return (
     <div className="shop-container">
@@ -82,7 +94,11 @@ const Shop = () => {
         ))}
       </div>
       <div className="card-container">
-        <Cart cart={cart}></Cart>
+        <Cart cart={cart} handelClearDb={handelClearDb}>
+          <Link to={"/orders"}>
+            <button className="review-btn"> Review Order</button>
+          </Link>
+        </Cart>
       </div>
     </div>
   );

@@ -1,0 +1,10 @@
+.review-container {
+  margin: 70px auto;
+}
+
+.checkout-btn {
+  border-radius: 4px;
+  background: #f90;
+  width: 92%;
+  margin-top: 10px;
+}

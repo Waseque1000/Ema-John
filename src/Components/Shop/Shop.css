@@ -9,3 +9,10 @@
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 45px;
 }
+
+.review-btn {
+  border-radius: 4px;
+  background: #f90;
+  margin-top: 10px;
+  width: 92%;
+}

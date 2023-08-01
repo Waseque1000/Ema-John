@@ -9,3 +9,15 @@
 .cart h3 {
   text-align: center;
 }
+
+.cart-btn {
+  border-radius: 4px;
+  background: #ff3030;
+  width: 92%;
+  color: white;
+}
+
+.dlt-icons {
+  color: white;
+  margin-left: 8px;
+}

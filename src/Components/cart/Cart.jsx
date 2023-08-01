@@ -1,7 +1,9 @@
 import React from "react";
 import "./Cart.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 
-const Cart = ({ cart, price }) => {
+const Cart = ({ cart, price, handelClearDb, children }) => {
   //   const cart = props.cart;  // ! option -1
   //   const { cart } = props; // ? option -2
 
@@ -21,7 +23,7 @@ const Cart = ({ cart, price }) => {
   //! tax
   const tax = (total * 7) / 100;
   // * aita diye all cart er output dkha jay
-  console.log(cart);
+  // console.log(cart);
   //? grandTotal
   const grandTotal = (total + totalShiping + tax).toFixed(2);
   return (
@@ -32,7 +34,11 @@ const Cart = ({ cart, price }) => {
       <h4>Shipping:$ {totalShiping}</h4>
       <h4>Tax: ${tax.toFixed(2)}</h4>
       <h2>Grand Total: ${grandTotal}</h2>
-      <button>Clear Cart</button>
+      <button onClick={handelClearDb} className="cart-btn">
+        Clear Cart
+        <FontAwesomeIcon className="dlt-icons" icon={faTrashAlt} />
+      </button>
+      {children}
     </div>
   );
 };
