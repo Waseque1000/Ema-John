@@ -5,7 +5,7 @@ import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 
 const ReviewItems = ({ product, handelRemoveFromCart }) => {
   //   console.log(product);
-  const { name, img, price, quantity, id } = product;
+  const { name, img, price, quantity, _id } = product;
   return (
     <div className="review-items ">
       <img className="review-img" src={product.img} alt="" />
@@ -22,7 +22,7 @@ const ReviewItems = ({ product, handelRemoveFromCart }) => {
         </h6>
       </div>
 
-      <button onClick={() => handelRemoveFromCart(id)} className="btn-delete">
+      <button onClick={() => handelRemoveFromCart(_id)} className="btn-delete">
         <FontAwesomeIcon className="dlt-icon" icon={faTrashAlt} />
       </button>
     </div>

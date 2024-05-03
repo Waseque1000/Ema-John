@@ -16,3 +16,26 @@
   margin-top: 10px;
   width: 92%;
 }
+.pagination {
+  align-items: center;
+  display: flex;
+  margin-bottom: 50px;
+  padding-left: 39%;
+}
+
+.link {
+  padding: 10px;
+}
+.btn-01 {
+  background-color: rgb(224, 221, 221);
+
+  color: black;
+}
+
+.btn-01 :hover {
+  background-color: skyblue;
+}
+
+.okk {
+  text-align: center;
+}

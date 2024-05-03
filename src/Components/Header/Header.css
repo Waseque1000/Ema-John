@@ -22,3 +22,11 @@
 .span {
   color: white;
 }
+
+.sign {
+  background: red;
+}
+
+.ok {
+  display: flex;
+}

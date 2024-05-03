@@ -13,9 +13,12 @@ const Orders = () => {
   //! function for removing items from cart
   const handelRemoveFromCart = (id) => {
     // console.log(id);
+
     // ? condition ta holo muloto ai id bade baki guleke dorker tai filter use korbo
-    const remaining = cart.filter((product) => product.id !== id);
-    setCart(remaining); // * aita dile ui thake dlt hbr but server site thake dlt hbe na .. server site thake dlt korer jonno fake db thake remove db oi function call kore dite hbe
+    const remaining = cart.filter((product) => product._id !== id);
+    setCart(remaining);
+    // console.log(remaining);
+    // * aita dile ui thake dlt hbr but server site thake dlt hbe na .. server site thake dlt korer jonno fake db thake remove db oi function call kore dite hbe
     removeFromDb(id);
   };
 
@@ -30,7 +33,7 @@ const Orders = () => {
       <div className="review-container">
         {cart.map((product) => (
           <ReviewItems
-            key={product.id}
+            key={product._id}
             handelRemoveFromCart={handelRemoveFromCart}
             product={product}
           ></ReviewItems>
